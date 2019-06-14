@@ -1,0 +1,60 @@
+<div class="content-container" ng-controller="collectionefficiencyreportcontroller">
+        <ul class="breadcrumb">
+                <li class="active">{{'Collection Efficiency Report'}}</li>
+            </ul>
+            <div class="card">
+                    <div class="content">
+                        <div class="toolbar">
+                            <h4>Collection Efficiency Report</h4>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-7 col-md-7">
+                                <form novalidate="" class="form-horizontal " ng-submit="submit()">
+                                        <api-validate></api-validate>
+                                        <fieldset>
+                                                <div class="form-group">
+                                                        <label class="control-label col-sm-4">
+                                                        {{'Office'}} <span  class="required">*</span>
+                                                        </label>
+                                                        <div class="col-sm-3">
+                                                           <div ng-show="forceOffice == null">
+                                                              <select chosen="offices"  ng-model="formData.officeId"  class="form-control"
+                                                                 ng-options="office.id as office.name for office in offices" value="{{office.id}}">
+                                                                </select>
+                                                           </div>
+                                                           
+                                                        </div>
+                                                        
+                                                     </div>    
+                                                <br>
+                                            <div class="form-group">
+                                                    <label class="control-label col-sm-4" >{{ 'From Date'}}<span
+                                                        class="required">*</span></label>
+                                                        <div class="col-sm-4">
+                                                                <input  type="text"  datepicker-pop="dd MMMM yyyy"
+                                                                   ng-model="formData.fromdate" is-open="opened1" max="restrictDate"  class="form-control"/>
+                                                        </div>
+                                            </div>
+                                            <br>
+                                            <div class="form-group">
+                                                    <label class="control-label col-sm-4" >{{ 'To Date'}}<span
+                                                        class="required">*</span></label>
+                                                        <div class="col-sm-4">
+                                                                <input  type="text" datepicker-pop="dd MMMM yyyy"
+                                                                   ng-model="formData.todate" is-open="opened1" max="restrictDate"  class="form-control"/>
+                                                        </div>
+                                            </div>
+                                            <div class="col-md-offset-3">
+                                                    <button  type="submit" class="btn btn-primary" >{{'Submit'}}</button>
+                                            </div>
+
+                                        </fieldset>
+
+                                </form>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
